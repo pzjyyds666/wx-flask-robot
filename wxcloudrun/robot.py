@@ -1,4 +1,4 @@
-from wxcloudrun.werobot import WeRoBot
+from werobot import WeRoBot
 
 print('load robot.py')
 
