@@ -10,6 +10,13 @@ pymysql.install_as_MySQLdb()
 app = Flask(__name__, instance_relative_config=True)
 app.config['DEBUG'] = config.DEBUG
 
+from werobot.contrib.flask import make_view #使用make_view依赖到flask项目
+from robot import robot
+app.add_url_rule(rule='/api/app/',        # WeRoBot挂载地址
+                 endpoint='werobot',             # Flask的endpoint
+                 view_func=make_view(robot),#robot是robot文件
+                 methods=['GET', 'POST'])
+
 # 设定数据库链接
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{}:{}@{}/flask_demo'.format(config.username, config.password,
                                                                              config.db_address)
