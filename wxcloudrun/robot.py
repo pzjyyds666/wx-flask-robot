@@ -1,4 +1,4 @@
-from werobot import WeRoBot
+from wxcloudrun.werobot import WeRoBot
 
 robot = WeRoBot(
     token='xxxxxx',# 对应公众号的token设置
