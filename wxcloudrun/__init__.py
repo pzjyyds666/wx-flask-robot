@@ -11,7 +11,7 @@ app = Flask(__name__, instance_relative_config=True)
 app.config['DEBUG'] = config.DEBUG
 
 from werobot.contrib.flask import make_view #使用make_view依赖到flask项目
-from .robot import robot
+from wxcloudrun import robot
 app.add_url_rule(rule='/api/app/',        # WeRoBot挂载地址
                  endpoint='werobot',             # Flask的endpoint
                  view_func=make_view(robot),#robot是robot文件
